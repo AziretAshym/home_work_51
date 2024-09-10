@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    gap: 20px;
+}
+
+.numbersContainer  {
+    border: 2px solid #ddd;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.num {
+    color: #fff;
+    background-color: #0B63F6;
+    border: 2px solid #053c9b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.num:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.actionBtn {
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s ease;
+    background: #0B63F6;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.actionBtn:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #3C82F8;
+    background-color: #0053d1;
+}

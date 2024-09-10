@@ -1,17 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Numbers from "./components/numbers.tsx";
+import React, { useState } from 'react';
+import './App.css';
+import Numbers from "./components/numbers/numbers.tsx";
 
 const App = () => {
-  const [count, setCount] = useState(0)
+    const startNumbers = [5, 11, 16, 23, 32];
+    const [numbers, setNumbers] = useState<number[]>(startNumbers);
 
-  return (
-    <>
+    const getRandomNum = (): number => {
+        return Math.floor(Math.random() * (36 - 5 + 1)) + 5;
+    };
 
-    </>
-  )
+    const getNewNumbersArray = () => {
+        let newNumbersArray: number[] = [];
+
+        const addNewNumber = (num: number) => {
+            if (!newNumbersArray.includes(num)) {
+                newNumbersArray.push(num);
+            } else {
+                let otherNum = getRandomNum();
+                while (newNumbersArray.includes(otherNum)) {
+                    otherNum = getRandomNum();
+                }
+                newNumbersArray.push(otherNum);
+            }
+        };
+
+        // Генерация 5 уникальных чисел
+        while (newNumbersArray.length < 5) {
+            addNewNumber(getRandomNum());
+        }
+
+        setNumbers(newNumbersArray);
+    };
+
+    return (
+        <div className="container">
+            <div className="numbersContainer">
+                {numbers.map((num) => (
+                    <p className="num" key={num}>
+                        <Numbers number={num} />
+                    </p>
+                ))}
+            </div>
+            <button type="button" className="actionBtn" onClick={getNewNumbersArray}>
+                Get new numbers
+            </button>
+        </div>
+    );
 };
 
-export default App
+export default App;

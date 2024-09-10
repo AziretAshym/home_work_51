@@ -4,12 +4,10 @@ interface NumberProps {
     number: number;
 }
 
-const Numbers = ({number}) => {
+const Numbers: React.FC<NumberProps> = ({number}) => {
     return (
         <div>
-            <div className="number">
-                {number}
-            </div>
+            {number}
         </div>
     );
 };
