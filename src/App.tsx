@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Numbers from "./components/numbers/numbers.tsx";
 
@@ -25,7 +25,6 @@ const App = () => {
             }
         };
 
-        // Генерация 5 уникальных чисел
         while (newNumbersArray.length < 5) {
             addNewNumber(getRandomNum());
         }
